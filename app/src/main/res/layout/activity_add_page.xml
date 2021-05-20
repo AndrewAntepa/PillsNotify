@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Название препарат"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:id="@+id/editTittle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Старт приема"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"/>
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:id="@+id/datePick"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="Принимать каждые"
+            android:layout_margin="5dp"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:entries="@array/spinnerInterval"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/intervalSpinner"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/hour"
+            android:textColor="@color/black"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="Дозировка: "
+            android:layout_margin="5dp"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:entries="@array/spinnerDose"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/doseSpinner"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавить"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:background="@drawable/buttonshape"
+        android:id="@+id/addPill"/>
+
+</LinearLayout>
