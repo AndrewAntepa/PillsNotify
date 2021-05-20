@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             HashMap<String, Object> map = new HashMap<>();
             map.put("tittle", tittle);
             map.put("start", start);
-            map.put("next", next);
+            map.put("next", "через " + next + " час(ов)");
             map.put("amount", amount);
             map.put("image", R.drawable.pill_example);
             mapPills.add(map);
