@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#e1cebf"
     android:padding="5dp">
 
     <LinearLayout
@@ -31,7 +32,7 @@
         android:layout_gravity="bottom|center_horizontal"
         android:background="@drawable/buttonshape"
         android:textColor="@color/white"/>
-    <!--<androidx.appcompat.widget.AppCompatButton
-        android:layout_width=""
-        android:layout_height=""/>-->
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
 </FrameLayout>
