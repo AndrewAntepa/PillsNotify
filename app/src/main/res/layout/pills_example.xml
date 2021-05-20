@@ -19,21 +19,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
+            android:textColor="@color/black"
             android:id="@+id/tittleExam"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
+            android:textColor="@color/black"
             android:id="@+id/startExam"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
+            android:textColor="@color/black"
             android:id="@+id/nextExam"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
+            android:textColor="@color/black"
             android:id="@+id/amountExam"/>
     </LinearLayout>
 

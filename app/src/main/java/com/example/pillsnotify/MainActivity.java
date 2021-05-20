@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -17,8 +18,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
-
-    Button addButton;
+    Button addButton, upButton;
     Intent intent;
     ListView pillsList;
 
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         startService(new Intent(MainActivity.this, NotifyService.class));
 
         addButton = findViewById(R.id.addButton);
+        upButton = findViewById(R.id.up);
         pillsList = findViewById(R.id.listview);
         intent = new Intent(MainActivity.this, AddPage.class);
 
@@ -47,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        upButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pillsList.smoothScrollToPosition(0);
+            }
+        });
+
         readDataBase();
     }
 
