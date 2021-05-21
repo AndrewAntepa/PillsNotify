@@ -9,17 +9,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
     Button addButton, upButton;
-    Intent intent;
     ListView pillsList;
 
     SQLiteDatabase sdb;
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         addButton = findViewById(R.id.addButton);
         upButton = findViewById(R.id.up);
         pillsList = findViewById(R.id.listview);
-        intent = new Intent(MainActivity.this, AddPage.class);
 
         myOpenHelper = new MyOpenHelper(getApplicationContext());
         sdb = myOpenHelper.getWritableDatabase();
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this, AddPage.class));
             }
         });
 
@@ -53,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pillsList.smoothScrollToPosition(0);
+            }
+        });
+
+        pillsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), simpleAdapter.getItem(position).toString(), Toast.LENGTH_SHORT).show();
+                Intent pillPage = new Intent(MainActivity.this, PillPage.class);
+                pillPage.putExtra("tittleList", simpleAdapter.getItem(position).toString());
+                startActivity(pillPage);
             }
         });
 

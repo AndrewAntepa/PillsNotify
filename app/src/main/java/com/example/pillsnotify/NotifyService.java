@@ -62,7 +62,7 @@ public class NotifyService extends Service {
                 .setAutoCancel(true);
         Notification notification = nBuilder.build();
         notificationManager.notify(NOTIFY_ID++, notification);
-        alarmNotify(getApplicationContext(), 3600000);
+        alarmNotify(getApplicationContext(), 5000);
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -77,7 +77,7 @@ public class NotifyService extends Service {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public static void alarmNotify(Context context, long inter) {
+    public void alarmNotify(Context context, long inter) {
         Intent aintent = new Intent(context, NotifyService.class);
         PendingIntent alarmPend = PendingIntent.getService(context, 0, aintent, PendingIntent.FLAG_CANCEL_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);

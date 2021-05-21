@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".PillPage"
     android:orientation="vertical"
+    android:background="#e1cebf"
+    android:padding="5dp"
     android:gravity="center">
 
     <ImageView
