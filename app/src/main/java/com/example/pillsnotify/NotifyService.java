@@ -39,9 +39,6 @@ public class NotifyService extends Service {
 //        sdb = myOpenHelper.getWritableDatabase();
 //        readDataBase();
 
-        for (int i = 0; i < list.size(); i++) {
-
-        }
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         NotificationChannel nChannel = new NotificationChannel(CHANNEL_ID, "Пора принять лекарство!", NotificationManager.IMPORTANCE_DEFAULT);
@@ -62,7 +59,7 @@ public class NotifyService extends Service {
                 .setAutoCancel(true);
         Notification notification = nBuilder.build();
         notificationManager.notify(NOTIFY_ID++, notification);
-        alarmNotify(getApplicationContext(), 5000);
+        alarmNotify(getApplicationContext(), 10000);
         return super.onStartCommand(intent, flags, startId);
     }
 

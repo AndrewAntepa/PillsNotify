@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         pillsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), simpleAdapter.getItem(position).toString(), Toast.LENGTH_SHORT).show();
                 Intent pillPage = new Intent(MainActivity.this, PillPage.class);
                 pillPage.putExtra("tittleList", simpleAdapter.getItem(position).toString());
                 startActivity(pillPage);

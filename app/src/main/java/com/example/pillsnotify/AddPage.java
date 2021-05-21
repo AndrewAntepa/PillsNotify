@@ -29,7 +29,7 @@ import java.util.Calendar;
 import java.util.TimeZone;
 
 public class AddPage extends AppCompatActivity {
-    Button add;
+    Button add, cancel;
     EditText editText;
     DatePicker datePicker;
     Spinner interval, dose;
@@ -46,6 +46,7 @@ public class AddPage extends AppCompatActivity {
         setContentView(R.layout.activity_add_page);
 
         add = findViewById(R.id.addPill);
+        cancel = findViewById(R.id.cancel);
         editText = findViewById(R.id.editTittle);
         datePicker = findViewById(R.id.datePick);
         interval = findViewById(R.id.intervalSpinner);
@@ -86,6 +87,13 @@ public class AddPage extends AppCompatActivity {
                     sdb.close();
                     startActivity(new Intent(AddPage.this, MainActivity.class));
                 } else Toast.makeText(getApplicationContext(), "Заполните поле названия лекарства", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AddPage.this, MainActivity.class));
             }
         });
     }
