@@ -52,10 +52,9 @@ public class NotifyService extends Service {
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Прими лекарство")
                 .setContentText("ВРемя принять *Название*")
-                .setSmallIcon(R.drawable.pill_example)
+                .setSmallIcon(R.drawable.icon)
                 .setChannelId(CHANNEL_ID)
                 .setContentIntent(pIntent)
-                .addAction(R.drawable.ic_launcher_background, "Выполнено", donePend)
                 .setAutoCancel(true);
 
 
@@ -72,6 +71,7 @@ public class NotifyService extends Service {
 
                 nBuilder.setContentTitle("Прими " + tittle);
                 nBuilder.setContentText("Дозировка: " + amount);
+                nBuilder.addAction(R.drawable.ic_launcher_background, "Выполнено", donePend);
                 Notification notification = nBuilder.build();
 //                alarmManager.set(AlarmManager.RTC, time+1000, alarmPend);
                 notificationManager.notify(NOTIFY_ID++, notification);
