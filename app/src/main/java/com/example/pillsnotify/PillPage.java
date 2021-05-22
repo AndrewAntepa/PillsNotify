@@ -17,7 +17,7 @@ public class PillPage extends AppCompatActivity {
     Button back, del;
     TextView tittle, start, next, amount;
     private static final String INFO = "tittleList";
-    String inf, tit = "", st = "Начало приема ", ne = "Следующий прием ", am = "Доза: ", im = "";
+    String inf, tit = "", st = "Начало приема ", ne = "Следующий прием ", am = "Дозировка: ", im = "";
     SQLiteDatabase sdb;
     MyOpenHelper myOpenHelper;
 
