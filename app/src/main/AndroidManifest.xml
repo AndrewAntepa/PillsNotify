@@ -9,7 +9,17 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.PillsNotify">
-        <activity android:name=".PillPage"></activity>
+        <receiver android:name=".ButtonAddWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/button_add_widget_info" />
+        </receiver>
+
+        <activity android:name=".PillPage" />
 
         <service
             android:name=".NotifyService"
@@ -17,8 +27,12 @@
             android:exported="true" />
 
         <activity android:name=".GoodJob" />
-        <activity android:name=".AddPage" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".AddPage"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
