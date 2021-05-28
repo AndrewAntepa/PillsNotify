@@ -36,7 +36,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".GoodJob" />
+        <activity android:name=".GoodJob"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".AddPage"
             android:launchMode="singleTop"/>
