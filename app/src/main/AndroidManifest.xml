@@ -29,7 +29,8 @@
         </receiver>
 
         <activity android:name=".PillPage"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:noHistory="true"/>
 
         <service
             android:name=".NotifyService"
@@ -37,10 +38,12 @@
             android:exported="true" />
 
         <activity android:name=".GoodJob"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:noHistory="true"/>
         <activity
             android:name=".AddPage"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:noHistory="true"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop">
