@@ -60,8 +60,6 @@ public class PillPage extends AppCompatActivity {
                 + " WHERE " + MyOpenHelper.COLUMN_TITLE
                 + " = \"" + tit + "\";";
         Cursor cursor = sdb.rawQuery(query, null);
-        Toast.makeText(getApplicationContext(), cursor.toString(), Toast.LENGTH_SHORT).show();
-
 
         cursor.moveToFirst();
         tittle.append(cursor.getString(cursor.getColumnIndex(MyOpenHelper.COLUMN_TITLE)));

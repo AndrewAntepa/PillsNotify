@@ -9,8 +9,7 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.PillsNotify">
-        <activity android:name=".SplashActivity"
-            android:launchMode="singleTop">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +28,8 @@
                 android:resource="@xml/button_add_widget_info" />
         </receiver>
 
-        <activity android:name=".PillPage" />
+        <activity android:name=".PillPage"
+            android:launchMode="singleTop"/>
 
         <service
             android:name=".NotifyService"
@@ -39,7 +39,7 @@
         <activity android:name=".GoodJob" />
         <activity
             android:name=".AddPage"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop">
