@@ -54,7 +54,6 @@ public class PillPage extends AppCompatActivity {
         for (int j = that.length()-1; j >= 0; j--) {
             tit += that.charAt(j);
         }
-//        tittle.append(tit);
 
         String query = "SELECT * FROM "
                 + MyOpenHelper.TABLE_NAME
