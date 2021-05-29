@@ -54,6 +54,7 @@ public class NotifyService extends Service {
                 .setContentText("ВРемя принять *Название*")
                 .setSmallIcon(R.drawable.icon)
                 .setChannelId(CHANNEL_ID)
+                .addAction(R.drawable.ic_launcher_background, "Выполнено", donePend)
                 .setContentIntent(pIntent)
                 .setAutoCancel(true);
 
@@ -71,7 +72,6 @@ public class NotifyService extends Service {
 
                 nBuilder.setContentTitle("Прими " + tittle);
                 nBuilder.setContentText("Дозировка: " + amount);
-                nBuilder.addAction(R.drawable.ic_launcher_background, "Выполнено", donePend);
                 Notification notification = nBuilder.build();
 //                alarmManager.set(AlarmManager.RTC, time+1000, alarmPend);
                 notificationManager.notify(NOTIFY_ID++, notification);
