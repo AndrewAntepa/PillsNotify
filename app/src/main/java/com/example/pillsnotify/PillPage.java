@@ -83,9 +83,9 @@ public class PillPage extends AppCompatActivity {
             public void onClick(View v) {
                 String query = "DELETE FROM " + MyOpenHelper.TABLE_NAME + " WHERE tittle = '" + tit + "';";
                 sdb.execSQL(query);
+                cursor.close();
                 sdb.close();
                 myOpenHelper.close();
-                cursor.close();
                 startActivity(new Intent(PillPage.this, MainActivity.class));
             }
         });
